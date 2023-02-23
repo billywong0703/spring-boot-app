@@ -1,5 +1,6 @@
 package com.web.app.models;
 
+import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedBy;
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@MappedSuperclass
 public class BaseEntity implements Serializable {
 
     @CreatedBy

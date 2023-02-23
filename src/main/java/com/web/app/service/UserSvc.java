@@ -5,14 +5,20 @@ import com.web.app.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserSvc {
 
     @Autowired
     private UserRepo userRepo;
 
-    public User getById() throws Throwable {
-        return userRepo.findById(1L).orElseThrow(Throwable::new);
+    public User findById(Long id) throws Throwable {
+        return userRepo.findById(id).orElseThrow(Throwable::new);
+    }
+
+    public List<User> findAll() {
+        return userRepo.findAll();
     }
 
 }

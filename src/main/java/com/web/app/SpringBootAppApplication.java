@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 @SpringBootApplication(scanBasePackages = {"com.web.app"}, exclude = SecurityAutoConfiguration.class)
 public class SpringBootAppApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBootAppApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootAppApplication.class, args);
+    }
 
 }
