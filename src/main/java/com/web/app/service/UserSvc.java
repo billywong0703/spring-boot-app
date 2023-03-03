@@ -13,8 +13,8 @@ public class UserSvc {
     @Autowired
     private UserRepo userRepo;
 
-    public User findById(Long id) throws Throwable {
-        return userRepo.findById(id).orElseThrow(Throwable::new);
+    public User findById(Long id) throws Exception {
+        return userRepo.findById(id).orElseThrow(Exception::new);
     }
 
     public List<User> findAll() {

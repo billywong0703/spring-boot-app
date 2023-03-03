@@ -25,29 +25,29 @@ import lombok.ToString;
 @Table(name = "tb_user")
 public class User extends BaseEntity {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name = "id", nullable = false)
-        private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-        private String userName;
+    private String userName;
 
-        private String password;
+    private String password;
 
-        private String email;
+    private String email;
 
-        private long phoneNumber;
+    private long phoneNumber;
 
-        private String description;
+    private String description;
 
-        @ManyToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.EAGER)
-        @JoinTable(name = "tb_user_role", joinColumns = {
-                @JoinColumn(name = "user_id")},
-                inverseJoinColumns = {
-                        @JoinColumn(name = "role_id")
-                }
-        )
-        private Set<Role> roles;
+    @ManyToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @JoinTable(name = "tb_user_role", joinColumns = {
+            @JoinColumn(name = "user_id")},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "role_id")
+            }
+    )
+    private Set<Role> roles;
 
 }
 
